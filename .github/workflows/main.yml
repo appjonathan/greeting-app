@@ -1,8 +1,6 @@
 name: Checkout
 on: [workflow_dispatch]
-  push:
-    branches:
-      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,7 +32,7 @@ jobs:
         run: docker push eppjonathan/greeting-app:latest
 
   bring-alive:
-    runs-on: aws-ec2
+    runs-on: [aws-ec2]
     
     steps:
       - name: fetch image
