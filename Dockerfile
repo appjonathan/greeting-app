@@ -16,5 +16,5 @@ COPY . .
 # Exponieren Sie den Port, auf dem Ihre Anwendung läuft (z.B. 3000, wenn Ihre Anwendung auf Port 3000 läuft)
 EXPOSE 3000
 
-# Starten Sie die Anwendung
+# Starten Sie die Anwendung!
 CMD [ "node", "server.js" ]
