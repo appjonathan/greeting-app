@@ -1,5 +1,5 @@
 name: Checkout
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 
 jobs:
   build:
@@ -31,8 +31,8 @@ jobs:
       - name: Push image
         run: docker push eppjonathan/greeting-app:latest
 
-  bring-alive:
-    runs-on: [aws-ec2]
+  bring-live:
+    runs-on: aws-ec2
     needs: publish
     steps:
       - name: fetch image
