@@ -1,5 +1,5 @@
 name: Checkout
-on:
+on: [workflow_dispatch]
   push:
     branches:
       - main
@@ -32,4 +32,17 @@ jobs:
 
       - name: Push image
         run: docker push eppjonathan/greeting-app:latest
+
+  bring-alive:
+    runs-on: aws-ec2
+    
+    steps:
+      - name: fetch image
+        run: docker pull eppjonathan/greeting-app:latest
+
+      - name: remove existing container
+        run: docker rm -f greeting-app || true
+
+      - name: run container
+        run: docker run -d -p 3000:3000 --name greeting-app eppjonathan/greeting-app:latest
 
