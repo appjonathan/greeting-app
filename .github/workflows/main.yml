@@ -32,7 +32,7 @@ jobs:
         run: docker push eppjonathan/greeting-app:latest
 
   bring-live:
-    runs-on: aws-ec2
+    runs-on: self-hosted
     needs: publish
     steps:
       - name: fetch image
