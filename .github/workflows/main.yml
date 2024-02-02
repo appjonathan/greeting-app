@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        checkout: [actions/checkout@v2, actions/checkout@v3, actions/checkout@v4]
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: ${{ matrix.checkout }}
