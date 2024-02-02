@@ -33,7 +33,7 @@ jobs:
 
   bring-alive:
     runs-on: [aws-ec2]
-    
+    needs: publish
     steps:
       - name: fetch image
         run: docker pull eppjonathan/greeting-app:latest
