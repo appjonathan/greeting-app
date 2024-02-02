@@ -12,4 +12,4 @@ jobs:
         checkout: [actions/checkout@v2, actions/checkout@v3, actions/checkout@v4]
     steps:
       - name: checkout
-        uses: ${{ matrix.checkout }}
+        uses: ${{ needs.checkout.outputs.checkout }}
