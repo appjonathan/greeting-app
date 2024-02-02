@@ -31,5 +31,5 @@ jobs:
         run: docker image build -t eppjonathan/greeting-app .
 
       - name: Push image
-        run: docker push eppjonathan/greeting-app:tagname
+        run: docker push eppjonathan/greeting-app:latest
 
